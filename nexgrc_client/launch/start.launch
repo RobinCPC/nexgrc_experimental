@@ -1,0 +1,6 @@
+<launch>
+    <!-- Start the communication between ROS and GRC -->
+    <node name="grc_client" pkg="nexgrc_client" type="grc_client.py" output="screen">
+    </node>
+</launch>
+

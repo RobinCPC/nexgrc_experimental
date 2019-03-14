@@ -8,15 +8,15 @@ project(nexgrc_client)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  actionlib_msgs
-  control_msgs
-  geometry_msgs
-  message_generation
-  robot_movement_interface
   roscpp
   rospy
-  sensor_msgs
   std_msgs
+  message_generation
+  #  actionlib_msgs
+  #  control_msgs
+  #  geometry_msgs
+  #  robot_movement_interface
+  #  sensor_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -60,11 +60,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(
+  FILES
+  StringCommand.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -74,10 +73,14 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   actionlib_msgs#   control_msgs#   geometry_msgs#   sensor_msgs#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+#   actionlib_msgs
+#   control_msgs
+#   geometry_msgs
+#   sensor_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -111,7 +114,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES nexgrc_client
-  CATKIN_DEPENDS actionlib_msgs control_msgs geometry_msgs message_generation message_runtime robot_movement_interface roscpp rospy sensor_msgs std_msgs
+  CATKIN_DEPENDS message_runtime #actionlib_msgs control_msgs geometry_msgs robot_movement_interface roscpp rospy sensor_msgs std_msgs
 #  DEPENDS system_lib
 )
 
