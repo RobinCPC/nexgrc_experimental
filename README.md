@@ -23,9 +23,12 @@ source devel/setup.bash
 ## Usage:
 Currently, Only use `StringCommand` to communicate with GRC controller through tcpip.
 ``` bash
-# After build.
+# After build, run the following command
 roslaunch nexgrc_client start.launch
 # Then, client node will wait for connecting NexGRC controller
+
+# run with rviz (will need to specified urdf file)
+roslaunch nexgrc_client start_rviz_demo.launch model:=`rospack find PMC6dof_urdf`/urdf/PMC_6dof.urdf gui:=true
 ```
 
 For testing, open another terminal
