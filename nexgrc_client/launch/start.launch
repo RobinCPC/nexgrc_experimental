@@ -2,5 +2,9 @@
     <!-- Start the communication between ROS and GRC -->
     <node name="grc_client" pkg="nexgrc_client" type="grc_client.py" output="screen">
     </node>
+
+    <!-- Start the driver -->
+    <node name="grc_driver" pkg="nexgrc_client" type="grc_essentials_string.py">
+    </node>
 </launch>
 
