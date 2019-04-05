@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<!-- PMC 6-axis Articulated Manipulator -->
+<robot name="pmc6r" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/visual/PMC_BASE.STL"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.7 0.7 0.7 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/collision/PMC_BASEc.STL"/>
+            </geometry>
+        </collision>
+    </link>
+
+
+    <link name="link_1">
+        <visual>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/visual/PMC_J1.STL"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.7 0.7 0.7 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/collision/PMC_J1c.STL"/>
+            </geometry>
+        </collision>
+    </link>
+
+
+    <link name="link_2">
+        <visual>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/visual/PMC_J2.STL"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.7 0.7 0.7 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/collision/PMC_J2c.STL"/>
+            </geometry>
+        </collision>
+    </link>
+
+
+    <link name="link_3">
+        <visual>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/visual/PMC_J3.STL"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.7 0.7 0.7 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/collision/PMC_J3c.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="link_4">
+        <visual>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/visual/PMC_J4.STL"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.7 0.7 0.7 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/collision/PMC_J4c.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="link_5">
+        <visual>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/visual/PMC_J5.STL"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.7 0.7 0.7 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/collision/PMC_J5c.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <link name="link_6">
+        <visual>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/visual/PMC_J6.STL"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.7 0.7 0.7 1.0"/>
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://pmc6r_support/meshes/collision/PMC_J6c.STL"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="joint_1" type="revolute">
+        <parent link="base_link"/>
+        <child link="link_1"/>
+        <origin xyz="0.0 0.0 0.423" rpy="0 0 0"/>
+        <axis xyz="0 0 -1"/>
+        <limit lower="-2.967" upper="2.967" effort="0" velocity="0.5"/>
+    </joint>
+
+    <joint name="joint_2" type="revolute">
+        <parent link="link_1"/>
+        <child link="link_2"/>
+        <origin xyz="0.105 0 0" rpy="0 0 0"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="-3.3161" upper="0.7854" effort="0" velocity="0.5"/>
+    </joint>
+
+    <joint name="joint_3" type="revolute">
+        <parent link="link_2"/>
+        <child link="link_3"/>
+        <origin xyz="0 0 0.280" rpy="0 0 0"/>
+        <axis xyz="0 -1 0"/>
+        <limit lower="-2.0769" upper="2.9496" effort="0" velocity="0.5"/>
+    </joint>
+
+    <joint name="joint_4" type="revolute">
+        <parent link="link_3"/>
+        <child link="link_4"/>
+        <origin xyz="0.284 0 0.065" rpy="0 0 0"/>
+        <axis xyz="-1 0 0"/>
+        <limit lower="-3.3161" upper="3.3161" effort="0" velocity="0.5"/>
+    </joint>
+
+    <joint name="joint_5" type="revolute">
+        <parent link="link_4"/>
+        <child link="link_5"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-2.0944" upper="2.0944" effort="0" velocity="0.5"/>
+    </joint>
+
+    <joint name="joint_6" type="revolute">
+        <parent link="link_5"/>
+        <child link="link_6"/>
+        <origin xyz="0.0905 0 0" rpy="0 0 0"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-6.1086" upper="6.1086" effort="0" velocity="0.5"/>
+    </joint>
+</robot>
