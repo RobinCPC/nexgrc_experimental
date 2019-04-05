@@ -1,0 +1,21 @@
+<launch>
+    <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find pmc6r_gazebo)/world/pmc6r.world"/>
+        <!-- more default parameters can be changed here -->
+    </include>
+
+    <!-- Convert an xacro and put on parameter server -->
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find pmc6r_support)/urdf/pmc6r.urdf.xacro" />
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -z 1 -model pmc6r" />
+    <!--
+    -->
+
+    <!-- Spawn a robot into Gazebo -->
+    <!--
+    <param name="robot_description" textfile="$(find PMC6dof_urdf)/urdf/pmc6r.urdf"/>
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -z 1 -model pmc6r" />
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find PMC6dof_urdf)/urdf/pmc6r.urdf -urdf -z 1 -model pmc6r" />
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find baxter_description)/urdf/baxter.urdf -urdf -z 1 -model baxter" />
+    -->
+</launch>

@@ -21,6 +21,7 @@ source devel/setup.bash
 ```
 
 ## Usage:
+### Run with real Robot arm:
 Currently, Only use `StringCommand` to communicate with GRC controller through tcpip.
 ``` bash
 # After build, run the following command
@@ -45,6 +46,12 @@ rosservice call /grc_telnet 'get flange frame' ''
 rosservice call /grc_telnet 'get state' ''
 # ask robot to stop while executing ptp command
 rosservice call /grc_telnet 'halt' ''
+```
+
+### Work with Gazebo
+To display in Gazebo Simulation.
+``` bash
+roslaunch pmc6r_gazebo pmc6r_world.launch
 ```
 
 Note: In GRC Controller socket server part

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>nexgrc_experimental</name>
-  <version>0.0.1</version>
-  <description>Experimental package for NexCOBOT GRC to work with ROS.</description>
+  <name>pmc6r_gazebo</name>
+  <version>0.1.0</version>
+  <description>The pmc6r_gazebo package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/nexgrc_experimental</url> -->
+  <!-- <url type="website">http://wiki.ros.org/pmc6r_gazebo</url> -->
   <url type="repository">https://github.com/RobinCPC/nexgrc_experimental</url>
   <url type="bugtracker">https://github.com/RobinCPC/nexgrc_experimental/issues</url>
 
@@ -27,6 +27,7 @@
   <!-- Author tags are optional, multiple are allowed, one per tag -->
   <!-- Authors do not have to be maintainers, but could be -->
   <!-- Example: -->
+  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
   <author email="robinchen@nexcobot.com">Robin Chen</author>
 
 
@@ -52,15 +53,14 @@
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
 
-  <exec_depend>nexgrc_client</exec_depend>
-  <exec_depend>pmc6r_support</exec_depend>
-  <exec_depend>pmc6r_gazebo</exec_depend>
-
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_plugins</exec_depend>
+  <exec_depend>gazebo_ros_control</exec_depend>
+  <exec_depend>xacro</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
-    <metapackage />
 
   </export>
 </package>
