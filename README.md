@@ -48,10 +48,15 @@ rosservice call /grc_telnet 'get state' ''
 rosservice call /grc_telnet 'halt' ''
 ```
 
-### Work with Gazebo
-To display in Gazebo Simulation.
+### Work with Gazebo and control with ros_control
+Run the following command in order.
 ``` bash
+# To display in Gazebo Simulation.
 roslaunch pmc6r_gazebo pmc6r_world.launch
+# Connect with ros control
+roslaunch pmc6r_control pmc6r_control.launch
+# a function publish joint control message
+rosrun pmc6r_control simple_mover
 ```
 
 Note: In GRC Controller socket server part
