@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: pmc6r_support
+    relative_path: urdf/pmc6r.urdf.xacro
+    use_jade_xacro: true
+  SRDF:
+    relative_path: config/pmc6r.srdf
+  CONFIG:
+    author_name: Robin Chen
+    author_email: robinchen@nexcobot.com
+    generated_timestamp: 1554749637

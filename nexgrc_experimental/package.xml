@@ -56,6 +56,7 @@
   <exec_depend>pmc6r_support</exec_depend>
   <exec_depend>pmc6r_gazebo</exec_depend>
   <exec_depend>pmc6r_control</exec_depend>
+  <exec_depend>pmc6r_moveit_config</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
