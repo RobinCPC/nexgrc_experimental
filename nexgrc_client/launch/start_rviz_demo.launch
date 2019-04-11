@@ -1,8 +1,8 @@
 <launch>
     <!-- Set up ROS arguements and parmeters -->
-    <arg name="model" />
+    <arg name="model" default="$(find pmc6r_support)/urdf/pmc6r.urdf.xacro" />
     <arg name="gui" default="true" />
-    <arg name="rvizconfig" default="$(find urdf_tutorial)/rviz/urdf.rviz" />
+    <arg name="rvizconfig" default="$(find pmc6r_support)/rviz/pmc6r.rviz" />
 
     <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
     <param name="use_gui" value="$(arg gui)" />
@@ -10,10 +10,12 @@
 
     <!-- Start the communication between ROS and GRC -->
     <node name="grc_client" pkg="nexgrc_client" type="grc_client.py" output="screen">
+        <rosparam file="$(find nexgrc_client)/config/config.yaml" command="load" />
     </node>
 
     <!-- Start the driver -->
     <node name="grc_driver" pkg="nexgrc_client" type="grc_essentials_string.py">
+        <rosparam file="$(find nexgrc_client)/config/config.yaml" command="load" />
     </node>
 
     <!-- Start Robot State Publisher -->

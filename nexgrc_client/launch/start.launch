@@ -1,10 +1,12 @@
 <launch>
     <!-- Start the communication between ROS and GRC -->
     <node name="grc_client" pkg="nexgrc_client" type="grc_client.py" output="screen">
+        <rosparam file="$(find nexgrc_client)/config/config.yaml" command="load" />
     </node>
 
     <!-- Start the driver -->
     <node name="grc_driver" pkg="nexgrc_client" type="grc_essentials_string.py">
+        <rosparam file="$(find nexgrc_client)/config/config.yaml" command="load" />
     </node>
 </launch>
 

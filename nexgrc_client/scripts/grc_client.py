@@ -64,7 +64,8 @@ if __name__ == '__main__':
     # Start node
     rospy.init_node('grc_client')
 
-    # TODO: Load variables from config.yaml
+    TCP_IP = rospy.get_param('~robot_ip', TCP_IP)
+    TCP_PORT = rospy.get_param('~robot_port', TCP_PORT)
 
     connect()
 

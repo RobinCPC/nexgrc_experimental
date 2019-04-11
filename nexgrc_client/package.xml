@@ -20,6 +20,8 @@
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
   <!-- <url type="website">http://wiki.ros.org/nexgrc_client</url> -->
+  <url type="repository">https://github.com/RobinCPC/nexgrc_experimental</url>
+  <url type="bugtracker">https://github.com/RobinCPC/nexgrc_experimental/issues</url>
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
