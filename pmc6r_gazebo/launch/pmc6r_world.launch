@@ -6,16 +6,7 @@
     </include>
 
     <!-- Convert an xacro and put on parameter server -->
-    <param name="robot_description" command="$(find xacro)/xacro.py $(find pmc6r_support)/urdf/pmc6r.urdf.xacro" />
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find pmc6r_support)/urdf/pmc6r.urdf.xacro" />
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -z 1 -model pmc6r" />
-    <!--
-    -->
 
-    <!-- Spawn a robot into Gazebo -->
-    <!--
-    <param name="robot_description" textfile="$(find PMC6dof_urdf)/urdf/pmc6r.urdf"/>
-    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -z 1 -model pmc6r" />
-    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find PMC6dof_urdf)/urdf/pmc6r.urdf -urdf -z 1 -model pmc6r" />
-    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find baxter_description)/urdf/baxter.urdf -urdf -z 1 -model baxter" />
-    -->
 </launch>
