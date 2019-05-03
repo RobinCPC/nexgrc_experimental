@@ -21,6 +21,46 @@ pmc6r:
             joint_4: {p: 100.0, i: 0.01, d: 10.0}
             joint_5: {p: 100.0, i: 0.01, d: 10.0}
             joint_6: {p: 100.0, i: 0.01, d: 10.0}
+        constraints:
+            goal_time: 4.0                   # Override default
+            stopped_velocity_tolerance: 0.5  # Override default
+            joint_1:
+                trajectory: 1.00             # Not enforced if unspecified
+                goal: 0.50                   # Not enforced if unspecified
+            joint_2:
+                trajectory: 1.00             # Not enforced if unspecified
+                goal: 0.50                   # Not enforced if unspecified
+            joint_3:
+                trajectory: 1.00             # Not enforced if unspecified
+                goal: 0.50                   # Not enforced if unspecified
+            joint_4:
+                trajectory: 1.00             # Not enforced if unspecified
+                goal: 0.50                   # Not enforced if unspecified
+            joint_5:
+                trajectory: 1.00             # Not enforced if unspecified
+                goal: 0.50                   # Not enforced if unspecified
+            joint_6:
+                trajectory: 1.00             # Not enforced if unspecified
+                goal: 0.50                   # Not enforced if unspecified
+
+    # Group Position Controllers --------------------------------------------
+    # Allow to send single ROS msg of Float64MutiArray to all joints
+    joint_position_controller:
+        type: position_controllers/JointGroupPositionController
+        joints:
+            - joint_1
+            - joint_2
+            - joint_3
+            - joint_4
+            - joint_5
+            - joint_6
+        gains:
+            joint_1: {p: 100.0, i: 0.01, d: 10.0}
+            joint_2: {p: 100.0, i: 0.01, d: 10.0}
+            joint_3: {p: 100.0, i: 0.01, d: 10.0}
+            joint_4: {p: 100.0, i: 0.01, d: 10.0}
+            joint_5: {p: 100.0, i: 0.01, d: 10.0}
+            joint_6: {p: 100.0, i: 0.01, d: 10.0}
 
     # Individual Position Controllers ---------------------------------------
     # Allow to send individual ROS msg of Float64 to each joint
@@ -48,23 +88,4 @@ pmc6r:
         type: position_controllers/JointPositionController
         joint: joint_6
         pid: {p: 100.0, i: 0.01, d: 10.0}
-
-    # Group Position Controllers --------------------------------------------
-    # Allow to send single ROS msg of Float64MutiArray to all joints
-    joint_position_controller:
-        type: position_controllers/JointGroupPositionController
-        joints:
-            - joint_1
-            - joint_2
-            - joint_3
-            - joint_4
-            - joint_5
-            - joint_6
-        gains:
-            joint_1: {p: 100.0, i: 0.01, d: 10.0}
-            joint_2: {p: 100.0, i: 0.01, d: 10.0}
-            joint_3: {p: 100.0, i: 0.01, d: 10.0}
-            joint_4: {p: 100.0, i: 0.01, d: 10.0}
-            joint_5: {p: 100.0, i: 0.01, d: 10.0}
-            joint_6: {p: 100.0, i: 0.01, d: 10.0}
 
