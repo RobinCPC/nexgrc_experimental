@@ -1,4 +1,5 @@
 # nexgrc_experimental
+[![Build Status](https://travis-ci.org/RobinCPC/nexgrc_experimental.svg?branch=kinetic-devel)](https://travis-ci.org/RobinCPC/nexgrc_experimental)
 NexGRC Experimental
 
 nexgrc_clinet node provide ros service to talk with socket (and send command to GRC Controller)
@@ -11,7 +12,7 @@ int32 error_code
 string response
 ```
 
-## How to Build [Indigo]:
+## How to Build [Kinetic]:
 Go to your ROS workspace directory, then
 ``` bash
 # remove old compiled file (if exist) and rebuild
@@ -59,6 +60,7 @@ roslaunch pmc6r_control pmc6r_control.launch
 rosrun pmc6r_control simple_mover
 ```
 
-Note: In GRC Controller socket server part
-You need to set Inbouad rule of port (1688) for tcp connection (Windows Firewall --> Advanced Setting)
+Note: In GRC Controller socket server part.
+
+You need to set Inbouad rule of port (such as 1688) for tcp connection (From `Windows Firewall` -> `Advanced Setting`)
 
